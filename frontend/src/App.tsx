@@ -10,12 +10,14 @@ import MainPage from './components/MainPage/MainPage'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './components/Footer/Footer'
+import Banner from './components/Banner/Banner'
 
 function App() {
 
   return (
     <>
     <Header/>
+    <Banner/>
       <BrowserRouter>
         <div>
           <div className="page">
@@ -25,7 +27,7 @@ function App() {
               <Route path="/about.html" element={<About />} />
               <Route path=" /catalog/:id.html" element={<Item />} />
               <Route path="/cart.html" element={<Cart />} />
-              <Route path="/404.html" element={<ErrorPage />} />
+              <Route path="*" element={<ErrorPage />} />
               <Route path="/contacts.html" element={<Contacts />} />
             </Routes>
           </div>
